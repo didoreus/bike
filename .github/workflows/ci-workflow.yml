@@ -1,13 +1,9 @@
 name: CI Workflow
 
 on: 
-  push:
-    branches:
-      - 'feature/**'
-      
   pull_request:
-   branches:
-     - 'main'
+    branches:
+      - 'main'
 jobs:
   ci_job:
     name: CI Job
