@@ -4,8 +4,7 @@ import os, sys, pathlib
 from contextlib import contextmanager
 sys.path.append(os.getcwd())
 
-#from databricks.connect import DatabricksSession
-#from databricks.sdk import WorkspaceClient
+
 from pyspark.sql import SparkSession
 import pytest
 import json
