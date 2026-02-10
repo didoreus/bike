@@ -5,7 +5,7 @@ from contextlib import contextmanager
 sys.path.append(os.getcwd())
 
 #from databricks.connect import DatabricksSession
-from databricks.sdk import WorkspaceClient
+#from databricks.sdk import WorkspaceClient
 from pyspark.sql import SparkSession
 import pytest
 import json
@@ -70,7 +70,7 @@ def load_fixture(spark: SparkSession):
     return _loader
 
 
-def _enable_fallback_compute():
+"""def _enable_fallback_compute():
     """Enable serverless compute if no compute is specified."""
     conf = WorkspaceClient().config
     if conf.serverless_compute_id or conf.cluster_id or os.environ.get("SPARK_REMOTE"):
@@ -106,3 +106,4 @@ def pytest_configure(config: pytest.Config):
             DatabricksSession.builder.validateSession().getOrCreate()
         else:
             DatabricksSession.builder.getOrCreate()
+"""
