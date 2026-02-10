@@ -3,7 +3,7 @@ name: CI Workflow
 on: 
   push:
     branches:
-      - 'features-branch/**
+      - 'features-branch/**'
       
   pull_request:
    branches:
