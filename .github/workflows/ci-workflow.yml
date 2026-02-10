@@ -27,7 +27,7 @@ jobs:
             pip install -r requirement-pysaprk.txt
       - name: Run pytest & generate HTML report
         run: |
-            pytest --disable-warnings --cov=./src --co-report=html
+            pytest --disable-warnings --cov=./src --cov-report=html
 
       - name: Upload coerage HTML report
         uses: actions/upload-artifact@v4
