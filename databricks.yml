@@ -1,7 +1,7 @@
 # This is a Databricks asset bundle definition for citibikepj.
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
-  name: citibikepj
+  name: bike
   uuid: bc0bfbbb-92f2-466c-8977-06aaa97ef728
 
 include:
@@ -46,7 +46,13 @@ targets:
     mode: production
     workspace:
       host: https://adb-7405617174336907.7.azuredatabricks.net/
-      root_path: /Workspace/Users/garielledoreus@gmail.com/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - service_principal_name: e6315b7e-b4db-485a-886c-de48b87d0b3a
+        level: CAN_MANAGE
+    run_as:
+      service_principal_name: e6315b7e-b4db-485a-886c-de48b87d0b3a
+    
     variables:
       catalog: 
         default: 'circuitbike_test'
@@ -57,12 +63,15 @@ targets:
     workspace:
       host: https://adb-7405610128457150.10.azuredatabricks.net/
       # We explicitly deploy to /Workspace/Users/garielledoreus@gmail.com to make sure we only have a single copy.
-      root_path: /Workspace/Users/garielledoreus@gmail.com/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
     variables:
       catalog: 
         default: 'circuitbike'
       schema: prod
       dev_flag: 'false'
+    
     permissions:
-      - user_name: garielledoreus@gmail.com
+      - service_principal_name: dd04105b-62d0-4556-af75-d6abeb90275c
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: dd04105b-62d0-4556-af75-d6abeb90275c
