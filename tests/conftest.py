@@ -12,10 +12,10 @@ try:
     import json
     import csv
     import os
-except ImportError:
+  """except ImportError:
     raise ImportError(
         "Test dependencies not found.\n\nRun tests using 'uv run pytest'. See http://docs.astral.sh/uv to learn more about uv."
-    )
+    )"""
 
 
 @pytest.fixture()
