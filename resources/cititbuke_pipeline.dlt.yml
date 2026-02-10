@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    pipeline_my_etl_pipeline:
+      name: my_etl_pipeline
+      configuration:
+        catalog: '${var.catalog}'
+      libraries:
+        - notebook:
+            path: ../dlt/dlt_01bronze.ipynb
+        - notebook:
+            path: ../dlt/dlt_02silver.ipynb
+        - notebook:
+            path: ../dlt/dlt_03gold.ipynb
+      schema: bronze
+      development: '${var.dev_flag}'
+      photon: true
+      catalog: '${var.catalog}'
+      serverless: true
