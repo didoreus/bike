@@ -14,7 +14,7 @@ import os
 """
 except ImportError:
     raise ImportError(
-        "Test dependencies not found.\n\nRun tests using 'uv run pytest'. See http://docs.astral.sh/uv to learn more about uv."
+        "Test dependencies not found.\n\\n nRun tests using 'uv run pytest'. See http://docs.astral.sh/uv to learn more about uv."
     )
 """
 
