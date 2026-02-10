@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='citibikepj'
-    , version='0.0.3'
+    , version='0.0.4'
     , description='A package for the Citi Bike Project'
     , author='Dieuseul D.'
     , packages=find_packages(where='./src')
